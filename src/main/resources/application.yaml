@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: DocPeruser
+  datasource:
+    url: jdbc:postgresql://localhost:5432/doc
+    username: postgres
+    password: postgres
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4
+    vectorstore:
+      pgvector:
+        dimensions: 1700
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        initialize-schema: true
